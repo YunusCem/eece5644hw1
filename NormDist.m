@@ -4,7 +4,7 @@ function [x,z] = NormDist(N,n,mu,sigma)
     b =size(a);
     z =normrnd(0,1,b);
     %Finding x
-    x =sqrtm(sigma)*z+ones(n,N)*mu;
+    x =(sigma)^(0.5)*z+ones(n)*mu;
     %Displaying the results
     disp('Given the z drawn in the sample')
     disp(z)
