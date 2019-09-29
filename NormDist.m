@@ -1,10 +1,10 @@
 function [x,z] = NormDist(N,n,mu,sigma)
     %Defining z
-    a =zeros(n,N);
-    b =size(a);
-    z =normrnd(0,1,b);
+    z =normrnd(0,1,n,N);
     %Finding x
-    x =(sigma)^(0.5)*z+ones(n)*mu;
+    a =sigma^(0.5);
+    b =ones(n,N).*mu;
+    x =a*z+b;
     %Displaying the results
     disp('Given the z drawn in the sample')
     disp(z)
